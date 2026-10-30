@@ -8,7 +8,7 @@ Site de pesquisa e interação sobre **fragmentação da atenção no trabalho e
 - **Recorte escolhido:** falta de atenção no meio profissional e no cotidiano
 - **Eixo A:** Futuro do Trabalho · **Eixo B:** Geração Z
 
-🔗 **Site publicado:** _(inserir link do GitHub Pages)_
+🔗 **Site publicado:** _https://miranha2077.github.io/Entrega-5/#termometro_
 📄 **Auditoria de uso de IA:** [`AUDITORIA_IA.md`](AUDITORIA_IA.md)
 
 ---
