@@ -1,0 +1,238 @@
+:root {
+  --cor-primaria: #1f4fd8;
+  --cor-secundaria: #d6e84b;
+  --cor-superficie: #ffffff;
+  --cor-fundo: #f2f4f0;
+  --cor-texto: #131a2b;
+  --cor-suave: #4b5468;
+  --fonte-titulo: "Bricolage Grotesque", system-ui, sans-serif;
+  --fonte-corpo: "Instrument Sans", system-ui, sans-serif;
+  --esp-1: .5rem;
+  --esp-2: 1rem;
+  --esp-3: 2rem;
+  --raio: 14px;
+  --vidro: rgba(255, 255, 255, .65);
+  --borda: rgba(19, 26, 43, .12);
+}
+
+[data-bs-theme="dark"] {
+  --cor-primaria: #7c9bff;
+  --cor-superficie: #171e31;
+  --cor-fundo: #0e1320;
+  --cor-texto: #eef1f8;
+  --cor-suave: #a9b2c8;
+  --vidro: rgba(23, 30, 49, .65);
+  --borda: rgba(255, 255, 255, .14);
+}
+
+body {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-corpo);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  transition: background .3s, color .3s
+}
+
+h1,
+h2,
+h3,
+.brand {
+  font-family: var(--fonte-titulo);
+  letter-spacing: -.02em
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+  max-width: 18ch
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: var(--esp-2)
+}
+
+p,
+.lead {
+  max-width: 65ch
+}
+
+a {
+  color: var(--cor-primaria)
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--cor-secundaria);
+  color: #000;
+  padding: .5rem 1rem;
+  z-index: 2000
+}
+
+.skip-link:focus {
+  left: 0
+}
+
+.glass {
+  background: var(--vidro);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio)
+}
+
+.navbar {
+  border-radius: 0;
+  border-width: 0 0 1px
+}
+
+.brand {
+  font-weight: 800;
+  color: var(--cor-texto) !important
+}
+
+.hero {
+  background: radial-gradient(circle at 85% 20%, color-mix(in srgb, var(--cor-secundaria) 35%, transparent), transparent 45%)
+}
+
+.pergunta {
+  padding: var(--esp-3);
+  margin: 0;
+  border-left: 6px solid var(--cor-secundaria);
+  animation: entrada .8s ease both
+}
+
+.pergunta p:first-child {
+  font-weight: 600;
+  color: var(--cor-suave);
+  font-size: .9rem
+}
+
+.btn-brand {
+  background: var(--cor-primaria);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: .6rem 1.5rem;
+  transition: transform .2s, box-shadow .2s
+}
+
+[data-bs-theme="dark"] .btn-brand {
+  color: #0e1320
+}
+
+.btn-brand:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--cor-primaria) 40%, transparent)
+}
+
+.btn-brand:active {
+  transform: translateY(0)
+}
+
+:focus-visible {
+  outline: 3px solid var(--cor-primaria);
+  outline-offset: 3px
+}
+
+.card {
+  transition: transform .25s, box-shadow .25s
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .12)
+}
+
+.grafico {
+  position: relative;
+  height: 320px
+}
+
+.fieldset-q {
+  border: 0;
+  padding: 0;
+  margin: 0 0 var(--esp-3)
+}
+
+.fieldset-q legend {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--esp-1)
+}
+
+.opcoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: var(--esp-1)
+}
+
+.opcoes label {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .2s, border-color .2s
+}
+
+.opcoes input {
+  position: absolute;
+  opacity: 0
+}
+
+.opcoes label.sel {
+  background: var(--cor-primaria);
+  color: #fff;
+  border-color: var(--cor-primaria);
+  font-weight: 600
+}
+
+[data-bs-theme="dark"] .opcoes label.sel {
+  color: #0e1320
+}
+
+.opcoes label:focus-within {
+  outline: 3px solid var(--cor-primaria);
+  outline-offset: 2px
+}
+
+.progress-bar {
+  background: var(--cor-primaria);
+  transition: width .4s
+}
+
+.accordion-item,
+.accordion-button {
+  background: var(--cor-superficie);
+  color: var(--cor-texto)
+}
+
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: translateY(24px)
+  }
+
+  to {
+    opacity: 1;
+    transform: none
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  * {
+    animation: none !important;
+    transition: none !important
+  }
+}
+
+footer{
+  text-align: center;
+}
